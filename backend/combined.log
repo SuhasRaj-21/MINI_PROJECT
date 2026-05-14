@@ -1,0 +1,17 @@
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 11:40:30"}
+{"level":"info","message":"Seeding mock pollution data...","service":"eco-tracker-api","timestamp":"2026-05-14 11:40:31"}
+{"level":"info","message":"Mock data seeded.","service":"eco-tracker-api","timestamp":"2026-05-14 11:40:31"}
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 11:48:09"}
+{"level":"info","message":"Seeding mock pollution data...","service":"eco-tracker-api","timestamp":"2026-05-14 11:48:10"}
+{"level":"info","message":"Mock data seeded.","service":"eco-tracker-api","timestamp":"2026-05-14 11:48:10"}
+{"level":"info","message":"New client connected: uEqOxkv2XmrX-y5EAAAB","service":"eco-tracker-api","timestamp":"2026-05-14 11:49:40"}
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 11:53:14"}
+{"level":"info","message":"New client connected: npy5H86pzyBZVDoBAAAB","service":"eco-tracker-api","timestamp":"2026-05-14 11:53:19"}
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 11:54:56"}
+{"level":"info","message":"New client connected: hCB5fSnSU84WxcVDAAAB","service":"eco-tracker-api","timestamp":"2026-05-14 11:54:58"}
+{"level":"info","message":"New client connected: BbHTsEKg1wNyRrE4AAAD","service":"eco-tracker-api","timestamp":"2026-05-14 11:56:54"}
+{"level":"info","message":"Client disconnected: BbHTsEKg1wNyRrE4AAAD","service":"eco-tracker-api","timestamp":"2026-05-14 11:56:58"}
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 12:04:23"}
+{"level":"info","message":"New client connected: xSqcbbJUtGsbZXr1AAAB","service":"eco-tracker-api","timestamp":"2026-05-14 12:04:27"}
+{"level":"info","message":"Server running on port 5001","service":"eco-tracker-api","timestamp":"2026-05-14 12:05:28"}
+{"level":"info","message":"New client connected: AqUxCY31JCUdnhGCAAAB","service":"eco-tracker-api","timestamp":"2026-05-14 12:05:30"}
