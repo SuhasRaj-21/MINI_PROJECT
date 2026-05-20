@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        git 'Default'
-    }
-
     environment {
         IMAGE_NAME = "mini-project-final"
         CONTAINER_NAME = "mini-project-container"
@@ -15,7 +11,14 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/SuhasRaj-21/MINI-PROJECT-FINAL.git'
+                url: 'https://github.com/SuhasRaj-21/MINI_PROJECT.git'
+            }
+        }
+
+        stage('Dependency Check') {
+            steps {
+                bat 'pip install safety'
+                bat 'safety check'
             }
         }
 
@@ -27,10 +30,8 @@ pipeline {
 
         stage('Stop Old Container') {
             steps {
-                bat '''
-                docker stop %CONTAINER_NAME% || exit 0
-                docker rm %CONTAINER_NAME% || exit 0
-                '''
+                bat 'docker stop %CONTAINER_NAME% || exit 0'
+                bat 'docker rm %CONTAINER_NAME% || exit 0'
             }
         }
 
@@ -49,7 +50,7 @@ pipeline {
 
     post {
         success {
-            echo 'CI/CD Pipeline Executed Successfully!'
+            echo 'Pipeline Executed Successfully!'
         }
 
         failure {
