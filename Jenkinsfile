@@ -2,37 +2,20 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'nodejs'
+        git 'Default'
     }
 
     environment {
         IMAGE_NAME = "mini-project-final"
+        CONTAINER_NAME = "mini-project-container"
     }
 
     stages {
 
-        stage('Clone') {
+        stage('Clone Repository') {
             steps {
                 git branch: 'main',
                 url: 'https://github.com/SuhasRaj-21/MINI-PROJECT-FINAL.git'
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-
-        stage('Dependency Check') {
-            steps {
-                bat 'npm audit'
-            }
-        }
-
-        stage('SonarQube Analysis') {
-            steps {
-                bat 'echo SonarQube Scan Completed'
             }
         }
 
@@ -42,10 +25,35 @@ pipeline {
             }
         }
 
+        stage('Stop Old Container') {
+            steps {
+                bat '''
+                docker stop %CONTAINER_NAME% || exit 0
+                docker rm %CONTAINER_NAME% || exit 0
+                '''
+            }
+        }
+
         stage('Run Docker Container') {
             steps {
-                bat 'docker run -d -p 3000:3000 %IMAGE_NAME%'
+                bat 'docker run -d -p 5000:5000 --name %CONTAINER_NAME% %IMAGE_NAME%'
             }
+        }
+
+        stage('Check Running Containers') {
+            steps {
+                bat 'docker ps'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'CI/CD Pipeline Executed Successfully!'
+        }
+
+        failure {
+            echo 'Pipeline Failed!'
         }
     }
 }
